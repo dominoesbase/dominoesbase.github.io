@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Vida Rodrigues - IT Consultant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #1976d2;
+      --secondary-color: #0d47a1;
+      --text-color-light: #fff;
+      --text-color-dark: #333;
+      --background-light: #f5f5f5;
+      --background-dark: #121212;
+    }
 
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.light-mode {
+      background-color: var(--background-light);
+      color: var(--text-color-dark);
+    }
+
+    body.dark-mode {
+      background-color: var(--background-dark);
+      color: var(--text-color-light);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      margin: 0;
+      color: var(--primary-color);
+    }
+
+    .title {
+      font-size: 1.5rem;
+      margin: 10px 0 30px;
+      color: var(--secondary-color);
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .about {
+      font-size: 1.2rem;
+      margin-top: 30px;
+    }
+
+    .toggle-mode {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: var(--text-color-dark);
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="light-mode">
+  <div class="toggle-mode" onclick="toggleMode()">🌞</div>
+  <div class="container">
+    <h1>Jorge Vida Rodrigues</h1>
+    <p class="title">IT Consultant</p>
+    <button>Entre em Contato</button>
+    
+    <div class="about">
+      <p>Sou um consultor de TI com vasta experiência em soluções tecnológicas e infraestrutura de sistemas. Trabalho para ajudar empresas a melhorar sua eficiência por meio da tecnologia.</p>
+      <p>Me especializo em fornecer soluções personalizadas para problemas complexos de TI, garantindo que as empresas alcancem seus objetivos com segurança e inovação.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Desenvolvido por Jorge Vida Rodrigues - <a href="mailto:jorge.vida@exemplo.com">jorge.vida@exemplo.com</a></p>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const toggleButton = document.querySelector('.toggle-mode');
+      
+      if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        toggleButton.textContent = '🌙';
+      } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        toggleButton.textContent = '🌞';
+      }
+    }
+  </script>
+</body>
+</html>
